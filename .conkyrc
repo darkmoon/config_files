@@ -1,0 +1,68 @@
+background yes
+use_xft yes
+xftfont Tahoma:size=9
+xftalpha 0.8
+mail_spool $MAIL
+update_interval 3.0
+total_run_times 0
+own_window yes
+own_window_type normal
+own_window_transparent yes
+own_window_colour hotpink
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+#minimum_size 800 5
+maximum_width 180
+draw_shades yes
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+stippled_borders 8
+border_margin 4
+border_width 1
+default_color white
+default_shade_color black
+default_outline_color black
+color0 E04613
+alignment top_left
+gap_x 5
+gap_y 5
+no_buffers yes
+uppercase no
+cpu_avg_samples 1
+net_avg_samples 2
+override_utf8_locale yes
+use_spacer right
+max_port_monitor_connections 256
+
+TEXT
+${font Sans:bold:size=10}${alignc}${time %a, %d %b %Y} ${time %T}${font}
+${hr 1}
+${execi 600 conkyForecast --location=CHXX0017 --datatype=CC}${alignr}${color gold}${execi 7200 conkyForecast --location=CHXX0017 --datatype=SR}-${execi 7200 conkyForecast --location=CHXX0017 --datatype=SS}
+${font ConkyWeather:size=46}${color gold}${execi 600 conkyForecast --location=CHXX0017 --datatype=WF}${voffset -25}${offset 13}${font Arial Narrow:size=16}${execi 600 conkyForecast --location=CHXX0017 --datatype=HT}${voffset -8}${offset 4}${font ConkyWindNESW:size=50}${execi 600 conkyForecast --location=CHXX0017 --datatype=BS}${color}
+${voffset -10}${offset 10}${font ConkyWeather:size=26}${execi 7200 conkyForecast --location=CHXX0017 --datatype=WF --startday=1 --endday=4 --spaces=1}${font}
+${alignc}${execi 7200 conkyForecast --location=CHXX0017 --datatype=HT --startday=1 --endday=4 --spaces=6}
+${hr 1}
+${font Sans:bold:size=9}${color}CPU:${alignr}${color0}${cpu cpu1}%
+${color}${cpugraph 20,maximum_width ff0000 21B431}
+${font Sans:bold:size=7}${color}RAM: ${font Sans:bold:size=7}${color0}${alignr}$memperc% ${color0}${alignr}${color}${membar 6,120}
+
+${font Sans:bold:size=9}${color}Processes:${font Sans:bold:size=7}${color}${alignr}CPU   MEM
+${color}${top name 1} ${color0}${alignr} ${top cpu 1} ${top mem 1}
+${color}${top name 2} ${color0}${alignr} ${top cpu 2} ${top mem 2}
+${color}${top name 3} ${color0}${alignr} ${top cpu 3} ${top mem 3}
+${color}${top name 4} ${color0}${alignr} ${top cpu 4} ${top mem 4}
+${color}${top name 5} ${color0}${alignr} ${top cpu 5} ${top mem 5}
+
+${font Sans:bold:size=9}${color}Disks:${alignr}${color0}$diskio${font}
+${color}${diskiograph /dev/sdb 20,maximum_width ff0000 21b433}
+${color}/          : ${color0}${alignr}${fs_used_perc /} % ${color}${alignr}${fs_bar 6,100 /}
+${color}/home  : ${color0}${alignr}${fs_used_perc /home} % ${color}${alignr}${fs_bar 6,100 /home}
+${color}sdb5    : ${color0}${alignr}${fs_used_perc /home/dark/movz} % ${color}${alignr}${fs_bar 6,100 /home/dark/movz}
+
+${font Sans:bold:size=9}${color}Network${hr 1}${font}
+${color}DL:     ${color0}${downspeedf eth0}k/s${alignr}${totaldown eth0}
+${color}UL:     ${color0}${upspeedf eth0}k/s${alignr}${totalup eth0}
+
+${font Sans:bold:size=9}${color}System Log ${hr 1}
+${font Sans:normal:size=7}${color1}${exec dmesg | uniq | tail -n 5}
