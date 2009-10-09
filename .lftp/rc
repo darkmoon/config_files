@@ -1,0 +1,5 @@
+set bmk:save-passwords yes
+#set cmd:prompt "lftp \h:\w> "
+set ftp:list-empty-ok yes
+set cmd:prompt "\[\e[1;31m\]\s\[\e[1;33m\](\S) \[\e[1;36m\]\h\w\[\e[1;31m\] >\[\e[0m\]"
+debug 3

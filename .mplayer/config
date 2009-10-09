@@ -1,0 +1,36 @@
+########################################### Video
+vo=xv
+#monitoraspect=1680:1050
+# Use double-buffering. (Recommended for xv with SUB/OSD usage)
+double=yes
+#framedrop=yes
+dr=yes
+#ontop=yes
+#fs=yes
+#brightness=14
+vf=screenshot
+########################################### Audio
+ao=alsa
+af=volnorm
+########################################### Subtitles
+sub-fuzziness=1
+subcp=utf-8
+font=/home/dark/.fonts/chinese/wqy-zenhei.ttc
+# Set subtitle position. (100: as low as possible)
+#subpos=95
+## Set subtitle alignment at its position. (2: bottom)
+#subalign=0
+osdlevel=3
+#osd-duration=4000
+# Set font blur radius. (default: 2)
+subfont-blur=2.5
+# Set font outline thickness. (default: 2)
+subfont-outline=2.0
+# Set autoscale coefficient. (default: 5)
+subfont-text-scale=2
+subfont-autoscale=3
+# Set autoscale coefficient. (default: 6)
+subfont-osd-scale=2.5
+########################################## Appearance
+stop-xscreensaver=yes
+geometry=50%:50%

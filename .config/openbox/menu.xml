@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+	<menu id="apps-accessories-menu" label="Accessories">
+		<item label="Openbox Menu"><action name="Execute">
+            <execute>obmenu</execute></action>
+		</item>
+		<item label="StarDict"><action name="Execute">
+            <execute>stardict</execute>
+        </action></item>
+		<item label="Tilda"><action name="Execute">
+            <execute>tilda</execute></action>
+		</item>
+        <item label="rxvt-unicode"> <action name="Execute">
+			<execute>urxvt</execute>
+        </action> </item>
+        <item label="Sun VirtualBox"> <action name="Execute">
+			<execute>VirtualBox</execute>
+        </action> </item>
+        <item label="Galculator"> <action name="Execute">
+            <execute>galculator</execute>
+        </action> </item>
+	</menu>
+	<menu id="apps-net-menu" label="Internet">
+			<item label="Emesene"> <action name="Execute">
+				<execute>emesene</execute>
+			</action> </item>
+			<item label="FireFox"> <action name="Execute">
+				<execute>firefox</execute>
+			</action> </item>
+			<item label="Google Earth"> <action name="Execute">
+				<execute>googleearth</execute>
+			</action> </item>
+			<item label="Linux Fetion"> <action name="Execute">
+				<execute>linux-fetion</execute>
+			</action> </item>
+			<item label="Mitter"> <action name="Execute">
+				<execute>mitter</execute>
+			</action> </item>
+			<item label="Pidgin Internet Messenger"> <action name="Execute">
+				<execute>pidgin</execute>
+			</action> </item>
+			<item label="Skype"> <action name="Execute">
+				<execute>skype</execute>
+			</action> </item>
+			<item label="Torrent Metainfo Viewer"> <action name="Execute">
+				<execute>gtorrentviewer</execute>
+			</action> </item>
+			<item label="uTorrent"> <action name="Execute">
+				<execute>utorrent</execute>
+			</action> </item>
+			<item label="腾讯QQ"> <action name="Execute">
+				<execute>qq</execute>
+			</action> </item>
+	</menu>
+	<menu id="apps-office-menu" label="Office">
+			<item label="OpenOffice.org 3.1 Base"> <action name="Execute">
+				<execute>soffice -base</execute>
+			</action></item>
+			<item label="OpenOffice.org 3.1 Calc"> <action name="Execute">
+				<execute>soffice -calc</execute>
+			</action></item>
+			<item label="OpenOffice.org 3.1 Draw"> <action name="Execute">
+				<execute>soffice -draw</execute>
+			</action></item>
+			<item label="OpenOffice.org 3.1 From Template"> <action name="Execute">
+				<execute>soffice slot:5500</execute>
+			</action></item>
+			<item label="OpenOffice.org 3.1 Impress"> <action name="Execute">
+				<execute>soffice -impress</execute>
+			</action></item>
+			<item label="OpenOffice.org 3.1 Math"> <action name="Execute">
+				<execute>soffice -math</execute>
+			</action></item>
+			<item label="OpenOffice.org 3.1 Printer Administration"> <action name="Execute">
+				<execute>spadmin</execute>
+			</action></item>
+			<item label="OpenOffice.org 3.1 Writer"> <action name="Execute">
+				<execute>soffice -writer</execute>
+			</action></item>
+	</menu>
+	<menu id="apps-fileman-menu" label="Multimedia">
+        <item label="Gaupol Subtitle Editor"> <action name="Execute">
+            <execute>gaupol</execute>
+        </action> </item>
+        <item label="Gsopcast"> <action name="Execute">
+            <execute>gsopcast</execute>
+        </action> </item>
+        <item label="Livestation"> <action name="Execute">
+            <execute>Livestation</execute>
+        </action> </item>
+        <item label="Subtitle Editor"> <action name="Execute">
+            <execute>subtitleeditor</execute>
+        </action> </item>
+	</menu>
+	<menu id="apps-graphics-menu" label="Graphics">
+		<item label="Gpick"><action name="Execute">
+            <execute>gpick</execute>
+        </action></item>
+        <item label="Picasa"> <action name="Execute">
+            <execute>picasa</execute>
+        </action> </item>
+		<item label="Gimp">
+			<action name="Execute">
+				<command>
+					gimp
+				</command>
+				<startupnotify>
+					<enabled>
+						yes
+					</enabled>
+				</startupnotify>
+			</action>
+		</item>
+		<item label="Inkscape">
+			<action name="Execute">
+				<command>
+					inkscape
+				</command>
+				<startupnotify>
+					<enabled>
+						yes
+					</enabled>
+				</startupnotify>
+			</action>
+		</item>
+	</menu>
+	<menu id="system-menu" label="System">
+		<item label="Openbox Configuration Manager">
+			<action name="Execute">
+				<command>
+					obconf
+				</command>
+				<startupnotify>
+					<enabled>
+						yes
+					</enabled>
+				</startupnotify>
+			</action>
+		</item>
+		<item label="Manage Cups Printers">
+			<action name="Execute">
+				<command>
+					xdg-open http://localhost:631/
+				</command>
+				<startupnotify>
+					<enabled>
+						no
+					</enabled>
+					<icon>
+						cups
+					</icon>
+				</startupnotify>
+			</action>
+		</item>
+		<separator/>
+		<item label="Reconfigure Openbox">
+			<action name="Reconfigure"/>
+		</item>
+		<item label="Exit Openbox">
+			<action name="Exit">
+				<prompt>
+					yes
+				</prompt>
+			</action>
+		</item>
+	</menu>
+	<menu id="root-menu" label="Openbox 3">
+		<separator label="Applications"/>
+		<menu id="apps-accessories-menu"/>
+		<menu id="apps-editors-menu"/>
+		<menu id="apps-graphics-menu"/>
+		<menu id="apps-net-menu"/>
+		<menu id="apps-office-menu"/>
+		<menu id="apps-multimedia-menu"/>
+		<menu id="apps-term-menu"/>
+		<menu id="apps-fileman-menu"/>
+		<separator label="System"/>
+		<menu id="system-menu"/>
+		<separator/>
+		<item label="Log Out">
+			<action name="SessionLogout">
+				<prompt>
+					yes
+				</prompt>
+			</action>
+		</item>
+	</menu>
+</openbox_menu>
