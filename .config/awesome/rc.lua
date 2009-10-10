@@ -10,7 +10,7 @@ require("wicked")
 -- Themes define colours, icons, and wallpapers
 -- The default is a dark theme
 --theme_path = "/usr/share/awesome/themes/default/theme.lua"
-theme_path = "/home/dark/.config/awesome/toy.lua"
+theme_path = "/home/dark/.config/awesome/theme.lua"
 -- Uncommment this for a lighter theme
 -- theme_path = "/usr/share/awesome/themes/sky/theme.lua"
 
