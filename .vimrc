@@ -1,7 +1,10 @@
 set nocompatible
 set nu
 "set paste
-set history=900
+set history=200
+set viminfo='50,\"1000,:50,n~/.vim/viminfo
+"au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
+
 set showcmd
 set showmode
 set showmatch

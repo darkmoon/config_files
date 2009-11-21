@@ -1,11 +1,16 @@
 " 1.2 (created: 2008/08/16 18:51:52)
 " Mappings
+"noremap H gT
+"noremap L gt
+noremap c Y
+
 cnoremap <C-c> <C-v><C-c>
 cnoremap <C-v> <C-v><C-v>
 cnoremap <C-x> <C-v><C-x>
 inoremap <C-a> <C-v><C-a>
 inoremap <C-c> <C-v><C-c>
 inoremap <C-v> <C-v><C-v>
+inoremap <Insert> <S-Insert>
 inoremap <C-x> <C-v><C-x>
 
 " Options
@@ -14,7 +19,22 @@ set previouspattern=\s*上一页|上一頁|上一张|上页|上頁\s*,\bprev|pre
 set showtabline=1
 set guioptions=n
 set ds=g
-set popups=2
+set popups=tab
+set editor=urxvtc\ -e\ vim
+
+
+"commands
+command py set! network.proxy.type=1
+command pn set! network.proxy.type=2
+
+command cy set! network.cookie.cookieBehavior=0
+command cn set! network.cookie.cookieBehavior=2
+
+command in set! permissions.default.image=2
+command iy set! permissions.default.image=1
+
+command jn set! javascript.enabled=false
+command jy set! javascript.enabled=true
 
 " Abbreviations
 
