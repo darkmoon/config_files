@@ -15,7 +15,8 @@ af=volnorm
 ########################################### Subtitles
 sub-fuzziness=1
 subcp=utf-8
-font=/home/dark/.fonts/chinese/wqy-zenhei.ttc
+#font=/home/dark/.fonts/chinese/wqy-zenhei.ttc
+font="WenQuanYi Zen Hei"
 # Set subtitle position. (100: as low as possible)
 #subpos=95
 ## Set subtitle alignment at its position. (2: bottom)

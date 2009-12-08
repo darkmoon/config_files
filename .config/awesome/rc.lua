@@ -14,7 +14,7 @@ require("vicious")
 beautiful.init("/home/dark/.config/awesome/mytheme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "urxvtc"
+terminal = "urxvt"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -55,15 +55,15 @@ layouts =
 -- {{{ Tags
 local tags = {}
 tags.setup = {
-    { name = "do",     layout = layouts[1], mwfact = 0.61  },
-    { name = "re",     layout = layouts[8]  },
-    { name = "mi",     layout = layouts[1]  },
-    { name = "fa",     layout = layouts[3]  },
-    { name = "so",     layout = layouts[5]  },
-    { name = "la",     layout = layouts[5]  },
-    { name = "ti",     layout = layouts[1]  },
-    { name = "8",      layout = layouts[9]  },
-    { name = "9",      layout = layouts[10]  }
+    { name = "do",      layout = layouts[1], mwfact = 0.61  },
+    { name = "re",      layout = layouts[8]  },
+    { name = "mi",      layout = layouts[1]  },
+    { name = "fa",      layout = layouts[3]  },
+    { name = "so",      layout = layouts[5]  },
+    { name = "la",      layout = layouts[5]  },
+    { name = "ti",      layout = layouts[1]  },
+    { name = "Do",      layout = layouts[9]  },
+    { name = "Re",      layout = layouts[10]  }
 }
 
 for s = 1, screen.count() do
@@ -104,7 +104,7 @@ mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
 -- Initialize widget
 cpuwidget = widget({ type = "textbox" })
 -- Register widget
-vicious.register(cpuwidget, vicious.widgets.cpu, "CPU <span color=\"#aaf200\">$1%</span> || ")
+vicious.register(cpuwidget, vicious.widgets.cpu, "CPU <span color=\"#aaf200\">$1%</span> || ", 1)
 -- }}}
 
 -- {{{ Memory usage
@@ -124,7 +124,7 @@ vicious.register(fswidget, vicious.widgets.fs, "sdb <span color=\"#aaf200\">${/h
 -- Initialize widget
 netwidget = widget({ type = "textbox" })
 -- Register widget
-vicious.register(netwidget, vicious.widgets.net, "<span color=\"#aaf200\">↓${eth0 down_kb} / ↑${eth0 up_kb}</span>", 2)
+vicious.register(netwidget, vicious.widgets.net, "<span color=\"#aaf200\">↓${eth0 down_kb} / ↑${eth0 up_kb}</span>", 1)
 -- }}}
 
 
@@ -366,11 +366,12 @@ awful.rules.rules = {
                      focus = true,
                      keys = clientkeys,
                      buttons = clientbuttons } },
-    { rule = { name  = "Browser" },      properties = { floating = true } },
-    { rule = { name  = "Download" },     properties = { floating = true } },
-    { rule = { name  = "Extension" },    properties = { floating = true } },
-    { rule = { name  = "Toplevel" },     properties = { floating = true } },
+    { rule = { instance  = "Browser" },      properties = { floating = true } },
+    { rule = { instance  = "Download" },     properties = { floating = true } },
+    { rule = { instance  = "Extension" },    properties = { floating = true } },
+    { rule = { instance  = "Toplevel" },     properties = { floating = true } },
     { rule = { class = "MPlayer" },      properties = { floating = true } },
+    { rule = { class = "emesene" },      properties = { floating = true } },
     { rule = { class = "Gpick" },        properties = { floating = true } },
     { rule = { class = "Gimp" },         properties = { floating = true } },
     { rule = { class = "Pidgin" },       properties = { floating = true } },
